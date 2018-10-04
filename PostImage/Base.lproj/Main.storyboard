@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,51 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PostImage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pL8-Go-IqM">
+                                <rect key="frame" x="0.0" y="20" width="375" height="262"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohR-pZ-gZv">
+                                <rect key="frame" x="156" y="361" width="63" height="30"/>
+                                <state key="normal" title="画像選択"/>
+                                <connections>
+                                    <action selector="imageSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bkH-KP-ye5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CU2-bA-gns">
+                                <rect key="frame" x="141.5" y="422" width="92" height="30"/>
+                                <state key="normal" title="アップロード"/>
+                                <connections>
+                                    <action selector="imageUpload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qcb-x7-9ue"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ohR-pZ-gZv" firstAttribute="centerX" secondItem="CU2-bA-gns" secondAttribute="centerX" id="6aa-ac-Cze"/>
+                            <constraint firstItem="pL8-Go-IqM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IsT-SO-FQI"/>
+                            <constraint firstItem="ohR-pZ-gZv" firstAttribute="top" secondItem="pL8-Go-IqM" secondAttribute="bottom" constant="79" id="Jba-0I-Lss"/>
+                            <constraint firstItem="CU2-bA-gns" firstAttribute="top" secondItem="ohR-pZ-gZv" secondAttribute="bottom" constant="31" id="Ou1-sU-aL9"/>
+                            <constraint firstItem="pL8-Go-IqM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="R88-x7-szs"/>
+                            <constraint firstItem="ohR-pZ-gZv" firstAttribute="centerX" secondItem="pL8-Go-IqM" secondAttribute="centerX" id="TKY-sz-RBN"/>
+                            <constraint firstItem="ohR-pZ-gZv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="156" id="aCj-4B-iS5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ohR-pZ-gZv" secondAttribute="trailing" constant="156" id="fbb-tD-ejX"/>
+                            <constraint firstItem="pL8-Go-IqM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lgl-Ky-N1t"/>
+                            <constraint firstAttribute="bottom" secondItem="ohR-pZ-gZv" secondAttribute="bottom" constant="276" id="t8p-Mb-ERK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="pL8-Go-IqM" id="lTu-gU-buo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
         </scene>
     </scenes>
 </document>
